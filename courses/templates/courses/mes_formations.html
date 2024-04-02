@@ -1,0 +1,29 @@
+{% extends "courses/base.html" %} 
+
+{% block content %}
+
+<br/>
+
+
+<div class="row"> 
+    {% for f in formations %}
+    <div class="card" style="width: 18rem;">
+        <img src="{{ f.image.url }}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{ f.title }}</h5>
+            {% if f.confirmed %}
+                <span class="badge bg-success">Confirmé</span>
+            {% else %}
+                <span class="badge bg-warning text-dark">En attente de confirmation</span>
+            {% endif %}
+            <a href="#" class="btn btn-link">Télécharger Diplôme</a>
+        </div>
+    </div>
+{% endfor %}
+
+    
+    
+<div>
+                            
+
+{% endblock %}
